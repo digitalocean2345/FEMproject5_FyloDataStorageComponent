@@ -1,0 +1,233 @@
+
+
+:root{
+    --gradient-start: hsl(6, 100%, 80%);
+    --gradient-end: hsl(335, 100%, 65%);
+
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);   
+}
+
+
+/* normalize by setting border and padding to 0 */
+*{
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* font size 62.5% would mean 1rem = 10px */
+html{
+    font-family: "Raleway",sans-serif;
+    font-size: 62.5%;
+}
+
+/* background */
+
+body{
+    height: 100vh;
+    background: url(./images/bg-desktop.png),var(--very-dark-blue);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+}
+
+@media (max-width:1000px) {
+    body{
+        background: url(./images/bg-mobile.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+
+.component-holder{
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    gap: 2.5rem;
+}
+
+@media (max-width:1000px) {
+    .component-holder{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/*fylo component*/
+
+.fylo-component{
+    width: 35rem;
+    height: 20rem;
+    background: var(--dark-blue);
+    border-radius: 10px 100px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 4rem;
+}
+
+@media (max-width:1000px) {
+    .fylo-component{
+        width: 32.5rem;
+        height: 20rem;
+        
+    }
+}
+
+.icon-logo{
+    height: 4rem;
+    width: 14rem;
+}
+.icon-holder{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.icon-item{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5px;
+    background-color: var(--very-dark-blue);
+    padding: 1.5rem;
+}
+
+/* data component*/
+.data-component{
+    width: 54rem;
+    height: 15rem;
+    background: var(--dark-blue);
+    border-radius: 10px;
+    padding: 4rem;
+    color: var(--pale-blue);
+    position: relative;
+}
+
+.bar{
+    width: 46rem;
+    height: 1.4rem;
+    background-color: var(--very-dark-blue);
+    border-radius: .7rem;
+    padding: 1px;
+}
+.gradient-bar{
+    height: 100%;
+    width: 34rem;
+    border-radius: .6rem;
+    background: linear-gradient(90deg, var(--gradient-start),var(--gradient-end));
+    padding: 1px;
+}
+
+.white-circle{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: var(--pale-blue);
+    margin-left: auto;
+}
+/* data limit */
+.data-limit{
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    font-weight: 500;
+}
+.data-limit span{
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/*data left box*/
+.data-left{
+    width: 18rem;
+    height: 7rem;
+    background-color: white;
+    position: absolute;
+    right: 4rem;
+    top: -4.5rem;
+    border-radius: 10px 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-left::after{
+    border-top: 10px solid white;
+    border-right: 10px solid white;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    content: '';
+    position: absolute;
+    right: 0px;
+    bottom: -20px;
+}
+
+.data-left-text{
+    color: var(--pale-blue);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.9rem;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.data-left-text strong{
+    font-size: 2.4rem;
+    color: var(--dark-blue);
+    font-family: 'Raleway';
+}
+.data-left-text span{
+    }
+@media (max-width:1000px) {
+    .data-component{
+        width: 32.5rem;
+        height: 16rem;
+    }
+    .bar{
+        width: 24.5rem;
+    }
+    .gradient-bar{
+        width: 19rem;
+    }
+    .data-component p{
+        text-align: center;
+    }
+    .data-left{
+        border-radius: 10px;
+        display: absolute;
+        top: 12.5rem;
+        left: 7.25rem;
+    }
+    .data-left::after{
+        display: none;
+    }
+}
+
+
+.attribution { 
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+    width: 100vw;
+    color: var(--pale-blue);    
+}
+.attribution a { color: hsl(229, 22%, 86%); }
+
+
